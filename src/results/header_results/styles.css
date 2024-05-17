@@ -1,0 +1,25 @@
+.header_results{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-top: 40px;
+}
+
+.text_city{
+
+    font-weight: 700;
+    color: #333333;
+    font-family: 'Montserrat';
+    font-size: 24px;
+}
+
+.amount{
+
+    font-weight: 500;
+    color: #4F4F4F;
+    font-family: 'Montserrat';
+    font-size: 14px;
+}

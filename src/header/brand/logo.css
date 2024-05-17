@@ -1,0 +1,15 @@
+.brand{
+    margin-top: 46px;
+}
+
+.icon_polygon{
+    width: 21.65px;
+    height: 18.75px;
+}
+
+.text_brand{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: red;
+}
