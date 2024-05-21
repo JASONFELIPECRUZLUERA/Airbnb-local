@@ -3,47 +3,22 @@ import { useEffect, useState } from 'react'
 import "./card.css";
 import star from "./../images/star.png"
 
-export const Results = () => {
+export const Results = ({ data }) => {
 
 
-    const [data, setData] = useState([])
-
-    async function getData() {
-        const rs = await fetch('./stays.json')
-        const rsJson = await rs.json()
-
-        const filteredData = rsJson.map(user => {
-
-            return {
-                id: user.id,
-                img: user.photo,
-                type_beds: user.type + " . " + user.beds + "beds",
-                rating: user.rating,
-                title: user.title,
-                superhost: user.superHost
-            }
-
-        })
-
-        setData(filteredData)
-    }
-    useEffect(() => {
-        getData()
-    }, [])
 
     return (
         <>
 
             <div className="container">
                 <div className="grid">
-                    {data &&
-                        data.map(user =>
+                    {data.map(user =>
                             <div>
                                 <div className="card" key={user.id}>
-                                    <img src={user.img} alt="Stylish apartment in center of the city" />
+                                    <img src={user.photo} alt="Stylish apartment in center of the city" />
                                     <div className="info">
-                                        {user.superhost && <span className="super-host">SUPERHOST</span>}
-                                        <span className="type">{user.type_beds}</span>
+                                        {user.superHost && <span className="super-host">SUPERHOST</span>}
+                                        <span className="type">{user.type} . {user.beds} beds</span>
                                         <div className="container_rating">
                                             <img src={star} alt="icon-star" />
                                             <span className="rating">{user.rating}</span>
