@@ -19,7 +19,8 @@ export const Results = () => {
                 img: user.photo,
                 type_beds: user.type + " . " + user.beds + "beds",
                 rating: user.rating,
-                title: user.title
+                title: user.title,
+                superhost: user.superHost
             }
 
         })
@@ -35,25 +36,25 @@ export const Results = () => {
 
             <div className="container">
                 <div className="grid">
-                {data &&
-                    data.map(user =>
-                        <div>
-                        <div className="card" key={user.id}>
-                            <img src={user.img} alt="Stylish apartment in center of the city" />
-                            <div className="info">
-                                <span className="super-host">SUPER HOST</span>
-                                <span className="type">{user.type_beds}</span>
-                                <div className="container_rating">
-                                    <img src={star} alt="icon-star" />
-                                    <span className="rating">{user.rating}</span>
+                    {data &&
+                        data.map(user =>
+                            <div>
+                                <div className="card" key={user.id}>
+                                    <img src={user.img} alt="Stylish apartment in center of the city" />
+                                    <div className="info">
+                                        {user.superhost && <span className="super-host">SUPERHOST</span>}
+                                        <span className="type">{user.type_beds}</span>
+                                        <div className="container_rating">
+                                            <img src={star} alt="icon-star" />
+                                            <span className="rating">{user.rating}</span>
+                                        </div>
+                                    </div>
+                                    <span className="description">{user.title}</span>
                                 </div>
                             </div>
-                            <span className="description">{user.title}</span>
-                        </div>
-                        </div>
 
-                    )
-                }
+                        )
+                    }
 
                 </div>
             </div>
