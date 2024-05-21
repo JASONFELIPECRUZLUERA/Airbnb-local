@@ -6,21 +6,28 @@ export const Navbar = () => {
 
     return (
         <>
-                <div className="search">
-                    <div className="div_city">
-                        <input className="city" placeholder="Helsinki, Finland" />
-                    </div>
+            <div className="search">
+                <div className="div_city">
+                    <select className="city" type="text" placeholder="city">
 
-                    <div className="div_guests">
-                        <input className="guests" placeholder="Add guests" />
-                    </div>
-
-                    <div className="div_btn_search">
-                        <button className="btn_search">
-                            <img className="icon_search" src={seacrh} />
-                        </button>
-                    </div>
+                        <option value=""> -locations-</option>
+                        <option value="Helsinki">Helsinki</option>
+                        <option value="Turku">Turku</option>
+                        <option value="Vaasa">Vaasa</option>
+                        <option value="Oulu">Oulu</option>
+                    </select>
                 </div>
+
+                <div className="div_guests">
+                    <input className="guests" type="number" placeholder="Add guests" max="10" min="0"></input>
+                </div>
+
+                <div className="div_btn_search">
+                    <button className="btn_search">
+                        <img className="icon_search" src={seacrh} />
+                    </button>
+                </div>
+            </div>
 
         </>
     )
